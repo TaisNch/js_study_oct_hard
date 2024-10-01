@@ -1,53 +1,22 @@
-// 1). Переменная lang может принимать 2 значения: 'ru' 'en'.
-// const lang = prompt('Выберите язык - ru или en', 'ru'); 
+// 1) Создайте функцию, которая принимает 1 аргумент (название произвольное)
+const newItem = function newExpr(item) {
+  // Проверка, является ли аргумент строкой
+  if (typeof item !== 'string') {
+    return 'У Вас ошибка, нужно ввести строку';
+  }
+  const noSpaces = item.trim();
+  if (noSpaces.length > 30) {
+    const trimmedText = noSpaces.substring(0, 30);
+    return `${trimmedText}...`; 
+  }
 
-// Написать условия при котором в зависимости от значения lang будут выводится дни недели на русском или английском языке. Решите задачу
-
-//  a) через if,
-const langIf = prompt('Выберите язык - ru или en', 'ru'); 
-const daysRu = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
-const daysEn = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-if (langIf === 'ru') {
-  console.log(daysRu);
-} else if (langIf === 'en') {
-  console.log(daysEn);
-} else {
-  console.log('Неверный ввод языка');
+  return noSpaces;
 }
 
-//  b) через switch-case
-const langSwitch = prompt('Выберите язык - ru или en', 'ru'); 
-switch (langSwitch) {
-  case 'ru':
-    console.log(daysRu);
-    break;
-  case  'en':
-      console.log(console.log(daysEn));
-      break;
-  default:
-      console.log('Неверный ввод языка');
-}
+console.log(newItem(prompt('Введите любую строку')));
 
-//  c) через многомерный массив без ифов и switch.
-const days = {
-  'ru': ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'],
-  'en': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-};
+// — Если в качестве аргумента передана не строка - функция оповещает об этом пользователя
 
-// Переменная lang, которая может принимать значения 'ru' или 'en'
-const langArr = prompt('Выберите язык - ru или en', 'ru');
+// — В полученной (как аргумент) строке функция должна убрать все пробелы в начале и в конце
 
-// Выводим соответствующий массив дней недели в зависимости от выбранного языка
-console.log(days[langArr] || 'Неверный ввод языка');
-
-// 2). У нас есть переменная namePerson. Если значение этой переменной “Артем” то вывести в консоль “директор”, если значение “Александр” то вывести в консоль “преподаватель”, с любым другим значением вывести в консоль “студент”
-
-const namePerson = prompt('Введите имя', 'Артем');
-
-//  Решить задачу с помощью нескольких тернарных операторов, без использования if или switch
-
-const role = (namePerson === 'Артем') ? console.log('директор') :
-             (namePerson === 'Александр') ? console.log('преподаватель') :
-             console.log('студент');
-
-
+// — Если строка более 30 знаков - то после 30го символа часть текста скрывается и вместо них появляются три точки (...)
