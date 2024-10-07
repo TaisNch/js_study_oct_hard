@@ -28,13 +28,8 @@ const isPrime = function(num) {
 
 
 for (let i=1; i<=100;i++) {
-   if(isPrime(i)) { arrPrime.push(i)};
+   if(isPrime(i)) { arrPrime.push(`${i}: Делители этого числа: 1 и ${i}`);};
   }
  console.log (arrPrime);
 
 
-// — Статья про простые числа - КЛИК
-
-// — Рядом с каждым числом написать оба делителя данного числа
-
-//     Например: “Делители этого числа: 1 и n”
