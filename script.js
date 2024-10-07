@@ -8,4 +8,4 @@ const newItem = function newExpr(item) {
   if (noSpaces.length > 30) {
     const trimmedText = noSpaces.substring(0, 30);
     return `${trimmedText}...`; 
-  }
+  }}
