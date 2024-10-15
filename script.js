@@ -1,11 +1,20 @@
-// 1) Создайте функцию, которая принимает 1 аргумент (название произвольное)
-const newItem = function newExpr(item) {
-  // Проверка, является ли аргумент строкой
-  if (typeof item !== 'string') {
-    return 'У Вас ошибка, нужно ввести строку';
-  }
-  const noSpaces = item.trim();
-  if (noSpaces.length > 30) {
-    const trimmedText = noSpaces.substring(0, 30);
-    return `${trimmedText}...`; 
-  }}
+// 1) Создать массив week и записать в него дни недели в виде строк
+// Вывести на экран все дни недели
+// Каждый из них с новой строчки
+// Выходные дни - курсивом
+// Текущий день - жирным шрифтом(использовать объект даты)
+
+week = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
+
+for (let i=0; i<=week.length; i++) {
+  if (i===0 || i === 6) {
+    document.write (`<i>${week[i]}</i></br>`)
+  } else
+  document.write (`${week[i]}</br>`)
+}
+  
+const today = new Date();
+const dayOfWeek = today.getDay(); 
+console.log('Сегодня:', week[dayOfWeek]); 
+
+console.log(week);
